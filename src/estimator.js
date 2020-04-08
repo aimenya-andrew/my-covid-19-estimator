@@ -1,5 +1,4 @@
 const covid19ImpactEstimator = (data) => {
-    const data = {};
     const impact = {};
     const severeImpact = {};
     const reportedCases = data.reportedCases;
