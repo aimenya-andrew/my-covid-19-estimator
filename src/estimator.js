@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const covid19ImpactEstimator = (data) => {
   let factor;
   const time = data.timeToElapse;
@@ -15,6 +14,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.currentlyInfected = ((data.reportedCases) * 50);
   impact.infectionsByRequestedTime = (impact.currentlyInfected * (2 ** factor));
   severeImpact.infectionsByRequestedTime = (severeImpact.currentlyInfected * (2 ** factor));
+
   const output = {
     data,
     impact,
