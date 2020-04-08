@@ -3,7 +3,7 @@ const covid19ImpactEstimator = (data) => {
   const time = data.timeToElapse;
   const impact = {};
   const severeImpact = {};
-  if ((data.timeToElapse) === 'days') {
+  if ((data.periodType) === 'days') {
     factor = Math.floor((time / 3));
   } else if ((data.timeToElapse) === 'weeks') {
     factor = Math.floor(((7 * time) / 3));
@@ -13,7 +13,7 @@ const covid19ImpactEstimator = (data) => {
   impact.currentlyInfected = ((data.reportedCases) * 10);
   severeImpact.currentlyInfected = ((data.reportedCases) * 50);
   impact.infectionsByRequestedTime = (impact.currentlyInfected * (2 ** factor));
-  severeImpact.infectionsByRequestedTime = (impact.currentlyInfected * (2 ** factor));
+  severeImpact.infectionsByRequestedTime = (severeImpact.currentlyInfected * (2 ** factor));
 
   const output = {
     data,
