@@ -6,9 +6,9 @@ const covid19ImpactEstimator = (data) => {
   if ((data.periodType) === 'days') {
     factor = Math.floor((time / 3));
   } else if ((data.timeToElapse) === 'weeks') {
-    factor = Math.floor(((7 * time) / 3));
+    factor = Math.floor(((time / 3) * 7));
   } else if (((data.timeToElapse) === 'months')) {
-    factor = Math.floor(((30 * time) / 3));
+    factor = Math.floor(((time / 3) * 30));
   }
   impact.currentlyInfected = ((data.reportedCases) * 10);
   severeImpact.currentlyInfected = ((data.reportedCases) * 50);
